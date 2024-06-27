@@ -18,11 +18,17 @@ fill out the `.env` file with the clerk values
 open two terminal tabs
 
 in the first tab:
-1 - clone this repo
-2 - `./db.build.sh`
-2 - `./db.run.sh`
+
+- clone this repo
+
+- `./db.build.sh`
+
+- `./db.run.sh`
 
 in the second tab:
-1 - `bun run dbgen`
-2 - `bun run dbpush`
-3 - `bun run dev`
+
+- `bun run dbgen`
+
+- `bun run dbpush`
+
+- `bun run dev`
