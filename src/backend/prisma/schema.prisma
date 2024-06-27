@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// This is not a real user, this is basically user settings.
+// Real users are stored in Clerk.
+model User {
+  id    String @id @db.VarChar(255)
+  // Essentially just mirrors the email they set up inside Clerk.
+  email String @unique @db.VarChar(255)
+
+  createdAt Int @map("created_at")
+  updatedAt Int @map("updated_at")
+
+  role UserRole @default(USER)
+
+  @@map("users")
+}
+
+enum UserRole {
+  SUPER
+  USER
+}

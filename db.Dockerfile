@@ -1,0 +1,7 @@
+FROM postgres:15
+
+ENV POSTGRES_USER=user
+ENV POSTGRES_PASSWORD=password
+ENV POSTGRES_DB=db_fullstack_template
+
+EXPOSE 5432
